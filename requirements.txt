@@ -1,2 +1,4 @@
 pytest
 allure-pytest==2.8.40
+selernium
+urlib3
