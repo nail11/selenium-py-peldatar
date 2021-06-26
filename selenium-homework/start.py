@@ -1,19 +1,18 @@
-import selenium
-
-pip install selenium
-
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 
-from webdriver_manager import ChromeDriverManager
+# from selenium.webdriver.chrome.options import Options
 
-options = Options()
-options.add_argument("--headless")
-options.add_argument('--disable-gpu')
+# from webdriver_manager import ChromeDriverManager
+# ha a Chrome éa a chromedriver verzió illeszkedés kétséges - alapvetően mindíg
 
-driver = webdriver.Chrome(ChromeDriverManager().install())
+# options = Options()
+# options.add_argument("--headless")
+# options.add_argument('--disable-gpu')
 
-# driver = webdriver.Chrome(chrome_options=chrome_options)
-# driver.get("https://www.google.com")
-# driver.find_element_by_css_selector("img").get_attribute("alt")
+# driver = webdriver.Chrome(ChromeDriverManager().install())
+# ha a Chrome éa a chromedriver verzió illeszkedés kétséges - alapvetően mindíg
+
+driver = webdriver.Chrome()
+
+driver.get("https://www.google.com")
 # 'Google'
