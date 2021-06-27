@@ -5,7 +5,7 @@ driver = webdriver.Chrome()
 driver.get("https://www.python.org")
 
 try:
-    find_element_by_id("nemletezik")
+    driver.find_element_by_id("nemletezik")
 
 except:
     print("A 'nemlétezik' azonosítójú elem nem létezik")

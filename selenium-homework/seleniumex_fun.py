@@ -10,7 +10,7 @@ def find_element(site, id):
     driver.get(site)
 
     try:
-        find_element_by_id(str(id))
+        driver.find_element_by_id(str(id))
 
     except:
         print("A" + "'" + id + "'" + "azonosítójú elem nem létezik")
