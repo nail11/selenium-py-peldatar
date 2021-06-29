@@ -1,9 +1,13 @@
 from selenium import webdriver
 
-driver = webdriver.Chrome()
+from webdriver_manager.chrome import ChromeDriverManager
+
+driver = webdriver.Chrome(ChromeDriverManager().install())
 
 driver.get("http://localhost:9999/trickyelements.html")
 
-element_list = [driver.find_element_by_id('element1'), driver.find_element_by_id('element2'). driver.find_element_by_id('element3'), driver.find_element_by_id('element4'), driver.find_element_by_id('element5')]
+for i in range(1, 6):
+
+   element_list = (driver.find_element_by_id( 'element'+str(i)))
 
 print(element_list)

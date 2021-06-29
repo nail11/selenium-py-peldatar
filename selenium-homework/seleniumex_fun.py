@@ -1,5 +1,4 @@
 def find_element(site, id):
-
     # site = input('Mi a keresett azonosító? ', site)
     # id = input('Mi a keresett azonosító? ', id)
 
@@ -17,6 +16,7 @@ def find_element(site, id):
 
     finally:
         driver.close()
+
 
 site = input('Mi az url? ')
 id = input('Mi a keresett azonosító? ')
