@@ -1,6 +1,6 @@
 # egész számokat kér be, míg 0-t nem kap, majd kiírja fordított sorrendben
 
-def num_add():
+def num_turn():
     x = 1
     list = []
     while x > 0:
@@ -25,7 +25,7 @@ def num_add():
 
 # a fordító függvény meghívása
 
-num_add()
+num_turn()
 
 
 
