@@ -35,6 +35,7 @@ with open('html_refs.txt', 'w') as text:
         # minden elemnél a számlálóhoz adunk plusz 1-t
 
         ref_count += 1
+
 driver.close()
 
 # print(html_refs)
