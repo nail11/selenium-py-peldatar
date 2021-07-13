@@ -3,6 +3,9 @@ import datetime
 # ezeket kell importálni
 from datetime import datetime, timezone, date, time
 
+# várakozás
+time.sleep(2)
+
 print(datetime.now(timezone.utc))
 
 #  datum/idő -lekérdezése időzónával

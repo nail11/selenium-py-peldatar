@@ -25,9 +25,8 @@ def find_element_by_id(id):
     return element
 
 
-with open('table_in2.csv', 'r') as csvin:
+with open('table_in.csv', 'r') as csvin:
     csv_in = csv.reader(csvin, delimiter=',')
-    print(type(csv_in))
     next(csv_in)
     for row in csv_in:
         print(row)
