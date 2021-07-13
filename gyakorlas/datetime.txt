@@ -1,0 +1,12 @@
+from datetime import datetime, date, time, timezone  # az alábbi kifejezésekhez kellenek
+
+datetime.  # ez a modul tartalmazza az idővel és dátummalkapcsolatos függvényeket pl. now(), date()
+
+print(datetime.now())
+
+now = datetime.now(timezone.utc)
+
+print(now)
+
+# dátum bevitel
+print(date(2000, 1, 1))
