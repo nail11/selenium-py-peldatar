@@ -11,7 +11,7 @@ driver.get("http://localhost:9999/filltablewithsum.html")
 
 
 def find_element_by_id(id):
-    element = driver.find_element_by_id(id)
+    element = driver.find_element_by_xpath(id)
     element.clear()
     return element
 

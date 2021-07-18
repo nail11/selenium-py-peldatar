@@ -34,6 +34,6 @@ print(f'{day} nap')
 
 date_field = driver.find_element_by_id("example-input-date")
 
-
+print(now.strftime('%d.%m.%Y'))
 date_field.clear()
 date_field.send_keys(now.strftime('%Y.%m.%d'))

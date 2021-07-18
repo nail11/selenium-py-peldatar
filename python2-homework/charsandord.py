@@ -20,7 +20,6 @@ with open('old_see_dog.txt') as text:
         .replace(';', '').replace('?', '').replace('--', '').replace('17__', '').replace(':', '').split()
 
 word = ''
-db = 0
 word_dic = dict()
 
 for i, word in enumerate(word_list):

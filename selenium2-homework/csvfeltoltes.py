@@ -27,7 +27,9 @@ def find_element_by_id(id):
 
 with open('table_in.csv', 'r') as csvin:
     csv_in = csv.reader(csvin, delimiter=',')
+    print(csv_in)
     next(csv_in)
+
     for row in csv_in:
         print(row)
         find_element_by_id('fullname').send_keys(row[0])
