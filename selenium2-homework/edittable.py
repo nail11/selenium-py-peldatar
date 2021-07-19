@@ -47,7 +47,6 @@ with open('table_datas.csv', 'r') as t:
 
     add_button_click('//*[@id="container"]/div/div[2]/button', 2)
 
-
     for row in t_datas:
         rows_in_table = driver.find_elements_by_tag_name('tr')
         empty_rows = rows_in_table[7:9]
@@ -57,4 +56,4 @@ with open('table_datas.csv', 'r') as t:
                 print(i)
                 print(type(cells[i]))
                 print(cells[i])
-                #cell.click()
+                # cell.click()
