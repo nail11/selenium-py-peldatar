@@ -23,61 +23,61 @@ try:
     double_click_text = "You double clicked me!!!, You got to be kidding me"
     test_text = "Ez OK!"
 
-    alerts = [alert_text, confirm_text, double_click_text, test_text]
-    print("print allerts:")
-    print(alerts)
-
-    # gombok megtalálása
-
-    buttons = driver.find_elements_by_tag_name("input")
-    print("buttons (as web elements)m and len of buttons list:")
-    print(buttons)
-    print(len(buttons))
-    but_names = list()
-
-    for i in range(len(buttons)):
-        but_name = str(buttons[i].get_attribute("value"))
-        but_names.append(but_name)
-        but_name = []
-        button_text = ""
-
-    print("print the list of button names as string on the button")
-    print(but_names)
-
-    for i in range(len(buttons)):
-
-        button = buttons[i] #driver.find_element_by_tag_name("input")
-        print("prints the actual button as webelement - it changes as scrolls throgh the buttons list:")
-        print(button)
-        print("prints the actual buttons name")
-        but_name = str(buttons[i].get_attribute("value"))
-        print(but_name)
-
-        if but_name == but_names[0]:
-            driver.find_element_by_xpath("//input[contains(@value, but_name)]").click()
-            at_button = driver.switch_to.alert
-            time.sleep(2)
-            print("prints at_button.text and alert")
-            print(at_button.text)
-            alert = at_button.text
-            print(alert)
-            print(alerts[0])
-            assert alert == alerts[0]
-            time.sleep(2)
-            at_button.accept()
-
-        if but_name == but_names[1]:
-            driver.find_element_by_xpath("//input[contains(@value, but_name)]").click()
-            at_button = driver.switch_to.alert
-            time.sleep(1)
-            print("prints at_button.text and alert")
-            print(at_button.text)
-            alert = at_button.text
-            print(alert)
-            print(alerts[1])
-            assert (alert == alerts[1])
-            time.sleep(1)
-            at_button.accept()
+    # alerts = [alert_text, confirm_text, double_click_text, test_text]
+    # print("print allerts:")
+    # print(alerts)
+    #
+    # # gombok megtalálása
+    #
+    # buttons = driver.find_elements_by_tag_name("input")
+    # print("buttons (as web elements)m and len of buttons list:")
+    # print(buttons)
+    # print(len(buttons))
+    # but_names = list()
+    #
+    # for i in range(len(buttons)):
+    #     but_name = str(buttons[i].get_attribute("value"))
+    #     but_names.append(but_name)
+    #     but_name = []
+    #     button_text = ""
+    #
+    # print("print the list of button names as string on the button")
+    # print(but_names)
+    #
+    # for i in range(len(buttons)):
+    #
+    #     button = buttons[i] #driver.find_element_by_tag_name("input")
+    #     print("prints the actual button as webelement - it changes as scrolls throgh the buttons list:")
+    #     print(button)
+    #     print("prints the actual buttons name")
+    #     but_name = str(buttons[i].get_attribute("value"))
+    #     print(but_name)
+    #
+    #     if but_name == but_names[0]:
+    #         driver.find_element_by_xpath("//input[contains(@value, but_name)]").click()
+    #         at_button = driver.switch_to.alert
+    #         time.sleep(2)
+    #         print("prints at_button.text and alert")
+    #         print(at_button.text)
+    #         alert = at_button.text
+    #         print(alert)
+    #         print(alerts[0])
+    #         assert alert == alerts[0]
+    #         time.sleep(2)
+    #         at_button.accept()
+    #
+    #     if but_name == but_names[1]:
+    #         driver.find_element_by_xpath("//input[contains(@value, but_name)]").click()
+    #         at_button = driver.switch_to.alert
+    #         time.sleep(1)
+    #         print("prints at_button.text and alert")
+    #         print(at_button.text)
+    #         alert = at_button.text
+    #         print(alert)
+    #         print(alerts[1])
+    #         assert (alert == alerts[1])
+    #         time.sleep(1)
+    #         at_button.accept()
 
     alert = driver.find_element_by_name("alert")
     confirm = driver.find_element_by_name("confirmation")
