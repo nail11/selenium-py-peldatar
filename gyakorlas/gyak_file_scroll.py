@@ -1,7 +1,9 @@
 # anchor link = hashmark-al (#) jelölt belső link, a honlapon belülre mutat - id tag-eel rendelkező szekcióra ugrik
 # másik lehetőség: kiveszem az ős (egyetlen van csak belőle) tag-et, a html-t. Ez az egész lapot lefedi és lehet END
 # vagy egyéb irányt megadni a send_keys() utasítással (+ Keys.valami)
-# még egy lehetőség: javascript -
+# még egy lehetőség: javascript - driver.execute_script(js)
+
+#ÚJ KIFEJEZÉSEK: execute_script()
 
 
 from selenium.webdriver.support.ui import WebDriverWait
