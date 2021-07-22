@@ -20,16 +20,24 @@ driver = webdriver.Chrome()
 try:
     driver.get("http://localhost:9999/general.html")
 
+
+# anchor keys
+    
+    # oldalon belül aznanchore link-re kattintatva
+
 # Keys
     #html = driver.find_element_by_tag_name("html")
+
+    # html tag az őstag, mindíg 1 van belőle, és a látható képernyőn kívüli tarülatakat is kijelöli
+
     #time.sleep(1)
     #html.send_keys(Keys.END)
     #time.sleep(1)
 
 # Javascript
 
-    js = "window.scrollTo(0, document.body.scrollHeight);"
-    driver.execute_script(js)
+   # js = "window.scrollTo(0, document.body.scrollHeight);"
+    #driver.execute_script(js)
     time.sleep(2)
 
 

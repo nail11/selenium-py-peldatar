@@ -4,6 +4,10 @@
 # iterálunk a lista elemein és megkeressük (majd kinyomtatjuk) a képek jellemzőir
 # meghívjuk click()-el 5x
 
+# beágyazott ciklusban az előzőleg kiszedett elemeken iterálunk !: "images"-t megkerestük, ez listát adott és ezen
+# iterálunk végig, hogy az egyes elemek ("j" a lista elemei lesznek (végig megy az egész "images" listán és visszaadja
+# a "j" elemeket mind).
+
 
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -28,4 +32,4 @@ try:
         load_more.click()
 
 finally:
-    driver.close()
+    pass #driver.close()

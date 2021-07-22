@@ -5,14 +5,16 @@
 # megjelenítve és cat_id meg az azonosító amit szolgáltató ad. A {} jelek ne legyenek benne a fájlnévben.
 # A megoldást egy catloader.py nevű fileban kell beadnod.
 
-# ÚJ KÖNYVTÁR: os
-# új dolgok: új könyvtár készítése, text fájl feltöltése ciklusból
+# ÚJ KÖNYVTÁR: os, request
+# új dolgok: új könyvtár készítése és ellenőrzáse, hogy megven-e, request HTML-hez, féjl letöltése egy
+# adott néven elmentése (.content)
 
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import time
 import os
+import requests
 
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium import webdriver
@@ -24,18 +26,23 @@ url = "http://localhost:9999/loadmore.html"
 
 try:
     driver.get(url)
-    cat_list = []
-    os.makedirs('./catdir')
+    if not os.path.isdir('./catdir'):
+        os.makedirs('./catdir')
     load_more = driver.find_element_by_xpath("//div[@class='load-more-button']/button")
     for i in range(3):
         load_more.click()
         time.sleep(3)
         images = driver.find_elements_by_xpath("//div[@class='image']")
 
-    for k, j in enumerate(images[0:20]):
-        cat_id = (f'{k + 1}_{(j.find_element_by_tag_name("p").text)[8:]}')
-        with open("./catdir/cat_ids.text", "a") as c_list:
-            c_list.write(cat_id + ",\n")
+    for k in range(len(images)):
+        image_url = images[k].find_element_by_tag_name("img").get_attribute("src")
+
+        print(image_url)
+        real_image = requests.get(image_url)
+        cat_id = (f'./catdir/{k + 1}_{(images[k].find_element_by_tag_name("p").text)[8:]}')
+        cat_image = f"{cat_id}.{image_url[-3:]}"
+        with open(cat_image, "wb") as ima:
+            ima.write(real_image.content)
 
 finally:
     driver.close()
