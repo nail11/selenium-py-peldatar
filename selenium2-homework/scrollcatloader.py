@@ -38,14 +38,13 @@ try:
         #time.sleep(3)
 
     #images = driver.find_elements_by_xpath("//div[@class='image']")
-    tmp = WebDriverWait(driver, 20).until(EC.visibility_of_all_elements_located((By.CLASS_NAME,"image")))
+
     time.sleep(5)
     full_page = driver.find_element_by_tag_name("html")
     full_page.send_keys(Keys.PAGE_DOWN)
 
     images = WebDriverWait(driver, 20).until(EC.visibility_of_all_elements_located((By.CLASS_NAME,"image")))
 
-    assert len(images) < 20 #print("kevesebb az elem" )
 
     for k in range(5):
         image_url = images[k].find_element_by_tag_name("img").get_attribute("src")
@@ -56,4 +55,4 @@ try:
             ima.write(real_image.content)
 
 finally:
-    pass #driver.close()
+    driver.close()
