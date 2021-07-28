@@ -1,6 +1,7 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 import time
 
 
@@ -21,6 +22,7 @@ try:
     persons_list = []
 
     while next_button.is_enabled():
+        i = 0
         for i in range(len(persons)):
             person = persons[i].find_elements_by_tag_name("td")
             for j in range(1):
@@ -35,11 +37,11 @@ try:
                     persons_list.append(persons_data_dict)
         print(persons_list)
         next_button.click()
-        #msg = WebDriverWait(driver, 20).until(
-            #EC.visibility_of_element_located((By.XPATH,
-            #"//*[@id='contacts-table']/tbody/tr[10]/td[5]"))).get_attribute("class")
-        #print(msg)
-        time.sleep(10)
+
+        screen = WebDriverWait(driver, 20).until(
+            EC.visibility_of_all_elements_located((By.XPATH,
+            "/html/body")))
+
 
         #StaleElementReferenceException: Message: stale element reference: element is not attached to the page document
 

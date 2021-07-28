@@ -31,14 +31,18 @@ driver = webdriver.Chrome(ChromeDriverManager().install())
 try:
     driver.get("http://localhost:9999/forms.html")
     main_window = driver.window_handles[0]
+    #Java script futtatása - windows.open - a második paraméter a neve az ablaknak
     driver.execute_script("window.open('', 'newwin', 'height=800,width=600')")
     new_window = driver.window_handles[1]
-    driver.switch_to_window(new_window)
+    #átlép az  új ablakba és megnyit egy url-t, Ez a Java függvény paramétere is lehetne
+    driver.switch_to.window(new_window)
     driver.get("http://localhost:9999/general.html")
-    text = driver.find_element_by_xpath("//*[@id='headings']/hgroup/h4").text
-    driver.switch_to_window(main_window)
+    # ezen a tag neme -on csak egy elem van
+    text = driver.find_element_by_tag_name("h4").text
+    driver.switch_to.window(main_window)
     example_input = driver.find_element_by_id("example-input-text")
     example_input.send_keys(text)
+    time.sleep(1)
 
 finally:
-    driver.quit()
+    pass #driver.quit()

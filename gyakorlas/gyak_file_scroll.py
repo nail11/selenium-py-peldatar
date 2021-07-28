@@ -36,8 +36,8 @@ try:
 
 # Javascript
 
-   # js = "window.scrollTo(0, document.body.scrollHeight);"
-    #driver.execute_script(js)
+    js = "window.scrollTo(0, document.body.scrollHeight);"
+    driver.execute_script(js)
     time.sleep(2)
 
 
