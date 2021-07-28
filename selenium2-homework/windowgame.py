@@ -30,8 +30,7 @@ print("A célablak színkódja: " + target_color)
 try:
 
     for j in range(len(buttons)):
-        button = buttons[j]
-        button.click()
+        buttons[j].click()
         time.sleep(1)
         new_window = driver.window_handles[1]
         driver.switch_to.window(new_window)
