@@ -17,4 +17,4 @@ try:
 except NoSuchElementException as e:
     print('Element not found: ', e)
 finally:
-    driver.close()
+   pass #driver.close()

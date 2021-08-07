@@ -31,7 +31,7 @@ try:
 
     for j in range(len(buttons)):
         buttons[j].click()
-        time.sleep(1)
+        #time.sleep(1)
         new_window = driver.window_handles[1]
         driver.switch_to.window(new_window)
         new_color = driver.find_element_by_tag_name("h1").text
@@ -43,4 +43,4 @@ try:
             driver.switch_to.window(main_window)
 
 finally:
-    driver.quit()
+   pass #driver.quit()

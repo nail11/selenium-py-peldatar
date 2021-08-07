@@ -4,15 +4,20 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
+from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from datetime import datetime
 # from selenium.webdriver.common.keys import Keys
-# from datetime import date
-# import time
 # from pathlib import Path
+# from datetime import date
+import os
+import requests
+# import time
+#import random
 # import pprint
+import csv
 
 options = Options()
 options.add_argument('--headless')
